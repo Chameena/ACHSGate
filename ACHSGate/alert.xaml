@@ -1,0 +1,15 @@
+﻿<Window x:Class="ACHSGate.alert"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ACHSGate"
+        mc:Ignorable="d"
+        Title="alert" Height="200" Width="400" Background="#484848" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    
+	<Grid HorizontalAlignment="Left" Width="392">
+		<Button x:Name="OK"   Content="OK" Margin="284,138,10,18" Background="White" Foreground="#FF0A3E68" FontSize="18" FontWeight="Bold" Click="OK_Click" IsDefault="True"/>
+		<TextBlock x:Name="alertText" HorizontalAlignment="Left" Height="123" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="372" FontSize="20" Foreground="#fff"/>
+
+	</Grid>
+</Window>

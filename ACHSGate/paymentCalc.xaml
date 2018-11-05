@@ -14,7 +14,7 @@
 				<Label Content="No.of Months :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="146" Margin="54,163,0,0"/>
 				<Label Content="Per Month :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="54,353,0,0"/>
 
-				<TextBox  x:Name="txtLoanAmount"  HorizontalAlignment="Left" Height="38" Margin="222,21,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="319"/>
+				<TextBox  x:Name="txtLoanAmount" HorizontalAlignment="Left" Height="38" Margin="222,21,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="319"/>
 				<TextBox  x:Name="txtperMonth" IsReadOnly="True" HorizontalAlignment="Left" Height="38" Margin="222,353,0,0" TextWrapping="Wrap" Text="" FontWeight="Bold" FontSize="18" VerticalAlignment="Top" Width="319"/>
 				<ComboBox  x:Name="cmbRate" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="222,93,0,0" VerticalAlignment="Top" Width="319" FontSize="18">
 					<ComboBoxItem Content="2"/>

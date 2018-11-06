@@ -73,6 +73,9 @@
     <Compile Include="registerVehicle.xaml.cs">
       <DependentUpon>registerVehicle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="viewVehicleInfo.xaml.cs">
+      <DependentUpon>viewVehicleInfo.xaml</DependentUpon>
+    </Compile>
     <Page Include="alert.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="viewVehicleInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -151,10 +158,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Home.jpg" />
+    <Resource Include="Resources\Images\login.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\login.jpg" />
+    <Resource Include="Resources\Images\Home1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\background1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

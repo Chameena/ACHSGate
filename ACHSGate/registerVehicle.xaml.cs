@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -59,16 +60,30 @@ namespace ACHSGate
             string name = cmbName.Text;
             float price = (float)Convert.ToDouble(txtiniprice.Text);
             string remarks = txtremarks.Text;
-            DateTime revenueDate = DateTime.ParseExact(dpRevenueDate.Text, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("en-UK"));
-            
-            DateTime insuranceDate = DateTime.ParseExact(dpInsuranceDate.Text, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("en-UK"));
 
-            
+            //string revenueDateOld = dpRevenueDate.SelectedDate.ToString();
+            //string[] Rdate = revenueDateOld.Split(' ');
+            //string revenueDate = Rdate[0];
+            string revenueDate = dpRevenueDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+            //DateTime.ParseExact(dpRevenueDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
+
+            //string insuranceDateOld = dpInsuranceDate.SelectedDate.ToString();
+            //string[] Idate = insuranceDateOld.Split(' ');
+            //string insuranceDate = Idate[0];
+            string insuranceDate = dpInsuranceDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+            //DateTime.ParseExact(dpInsuranceDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
+
+
             string fullname = txtfullname.Text;
             string nic = txtnic.Text;
             int tpNo = Convert.ToInt32(txttpNo.Text) ;
-            DateTime date = DateTime.ParseExact(dpDate.Text, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("en-UK"));
-            
+            //string dateOld = dpDate.SelectedDate.ToString();
+            // string[] Ddate = dateOld.Split(' ');
+            // string date = Ddate[0];
+            string date = dpDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+            //DateTime.ParseExact(dpDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
+
+            string testDate = "" ;
 
             string address = txtaddress.Text;
 
@@ -76,11 +91,11 @@ namespace ACHSGate
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[vehicle] ([vehicleNo],[engineNo],[chassiNo],[type],[brand],[name],[initialPrice],[insuranceDate],[revenueDate]) VALUES ('"+vehicleNo+"','"+engNo+"','"+chassiNo+"','"+type+"','"+brand+"','"+name+"', '"+price+"', '"+ revenueDate+ "', '"+ insuranceDate+ "') ", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[vehicle] ([vehicleNo],[engineNo],[chassiNo],[type],[brand],[name],[initialPrice],[insuranceDate],[revenueDate]) VALUES ('"+vehicleNo+"','"+engNo+"','"+chassiNo+"','"+type+"','"+brand+"','"+name+"', '"+price+ "', '" + insuranceDate + "', '" + revenueDate + "') ", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
 
-                SqlCommand cmd1 = new SqlCommand("INSERT INTO [dbo].[owner] ([vehicleNo],[preName],[preAddress],[preNic],[preTpno],[buyDate],[sellDate],[nextName] ,[nextAddress],[nextNic] ,[nextTpno]) VALUES ('" + vehicleNo + "','" + fullname + "','" + address + "','" + nic + "','" + tpNo + "','" + date + "','N/A','N/A','N/A','N/A','N/A')", con);
+                SqlCommand cmd1 = new SqlCommand("INSERT INTO [dbo].[owner] ([vehicleNo],[preName],[preAddress],[preNic],[preTpno],[buyDate],[sellDate],[nextName] ,[nextAddress],[nextNic] ,[nextTpno]) VALUES ('" + vehicleNo + "','" + fullname + "','" + address + "','" + nic + "','" + tpNo + "','" + date + "','" + testDate + "','null','null','null',0)", con);
                 cmd1.CommandType = CommandType.Text;
                 cmd1.ExecuteNonQuery();
                 con.Close();
@@ -129,6 +144,18 @@ namespace ACHSGate
             txttpNo.Text = "";
             dpDate.Text = "";
             txtaddress.Text = "";
+        }
+
+        private void txtiniprice_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            e.Handled = Regex.IsMatch(e.Text, "[^0-9.]+");
+        }
+
+        private void txttpNo_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            e.Handled = Regex.IsMatch(e.Text, "[^0-9.]+");
         }
     }
 }

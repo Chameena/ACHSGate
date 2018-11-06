@@ -25,7 +25,7 @@
 				<TextBox x:Name="txtvehiNo" HorizontalAlignment="Left" Height="38" Margin="85,15,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
 				<TextBox  x:Name="txtengNo" HorizontalAlignment="Left" Height="38" Margin="85,64,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
 				<TextBox  x:Name="txtchassiNo" HorizontalAlignment="Left" Height="38" Margin="85,114,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
-				<TextBox  x:Name="txtiniprice" HorizontalAlignment="Left" Height="38" Margin="85,165,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
+				<TextBox  x:Name="txtiniprice" HorizontalAlignment="Left" Height="38" Margin="85,165,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="300" Grid.Column="1" PreviewTextInput="txtiniprice_PreviewTextInput"/>
 				<TextBox  x:Name="txtremarks" HorizontalAlignment="Left" Height="38" Margin="601,165,0,0" VerticalAlignment="Top" Width="313" Grid.Column="1"/>
 
 				<ComboBox  x:Name="cmbBrand" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="601,64,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbBrand_SelectionChanged"/>
@@ -52,7 +52,7 @@
 
 				<TextBox  x:Name="txtfullname" HorizontalAlignment="Left" Height="38" Margin="134,25,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="830"/>
 				<TextBox  x:Name="txtnic" HorizontalAlignment="Left" Height="38" Margin="134,78,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="403"/>
-				<TextBox  x:Name="txttpNo" HorizontalAlignment="Left" Height="38" Margin="134,133,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="403"/>
+				<TextBox  x:Name="txttpNo" HorizontalAlignment="Left" Height="38" Margin="134,133,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="403" PreviewTextInput="txttpNo_PreviewTextInput"/>
 				<TextBox  x:Name="txtaddress" HorizontalAlignment="Left" Height="93" Margin="661,78,0,0" VerticalAlignment="Top" Width="303"/>
 
 				<DatePicker  x:Name="dpDate" HorizontalAlignment="Left" Height="38" Margin="134,186,0,0" FontSize="15" VerticalAlignment="Top" Width="403"/>

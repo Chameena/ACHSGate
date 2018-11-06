@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="homeAdmin" Height="700" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None">
 	<Window.Background>
-		<ImageBrush ImageSource="Resources/Images/Home.jpg"/>
+		<ImageBrush ImageSource="Resources/Images/Home1.jpg"/>
 	</Window.Background>
 	<Grid>
 		<Button x:Name="registerVehicle" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Register Vehicle" HorizontalAlignment="Left" Height="66" Margin="23,294,0,0" VerticalAlignment="Top" Width="204" Click="resigter_click"/>

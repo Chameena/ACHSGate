@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:ACHSGate"
         mc:Ignorable="d"
         Title="paymentCalc" Height="700" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None">
-	<Grid>
-		<GroupBox FontSize="20" FontWeight="Bold" Header="" HorizontalAlignment="Left" Height="531" Margin="229,98,0,0" VerticalAlignment="Top" Width="585">
-			<Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/Images/background1.jpg"/>
+    </Window.Background>
+    <Grid>
+		<GroupBox FontSize="20" FontWeight="Bold" Header="" HorizontalAlignment="Left" Height="460" Margin="229,98,0,0" VerticalAlignment="Top" Width="585">
+			<Grid Margin="0,0,-0.2,-3.4" Height="501" VerticalAlignment="Top">
 				<Label Content="Loan Amount :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="54,21,0,0"/>
 				<Label Content="Interest Rate (%) :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="146" Margin="54,93,0,0"/>
 				<Label Content="No.of Months :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="146" Margin="54,163,0,0"/>
@@ -40,11 +43,11 @@
 				<Button x:Name="cal" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Calculate" HorizontalAlignment="Left" Height="48" Margin="397,245,0,0" VerticalAlignment="Top" Width="144" Click="cal_Click" />
 
 				<Button x:Name="reset" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Reset" HorizontalAlignment="Left" Height="48" Margin="222,245,0,0" VerticalAlignment="Top" Width="144" Click="reset_Click"/>
-				<Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="397,426,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click"/>
-
+				
 			</Grid>
 		</GroupBox>
 		<TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Payment Calculator" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35"/>
+        <Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="837,615,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click"/>
 
-	</Grid>
+    </Grid>
 </Window>

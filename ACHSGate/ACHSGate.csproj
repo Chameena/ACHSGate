@@ -58,8 +58,14 @@
     <Compile Include="Class\cost.cs" />
     <Compile Include="Class\list.cs" />
     <Compile Include="Class\vehicle.cs" />
+    <Compile Include="commonInfo.xaml.cs">
+      <DependentUpon>commonInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="costAdding.xaml.cs">
       <DependentUpon>costAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryAdding.xaml.cs">
+      <DependentUpon>inventoryAdding.xaml</DependentUpon>
     </Compile>
     <Compile Include="paymentCalc.xaml.cs">
       <DependentUpon>paymentCalc.xaml</DependentUpon>
@@ -71,11 +77,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="commonInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="costAdding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="homeAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="inventoryAdding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

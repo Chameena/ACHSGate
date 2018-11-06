@@ -6,25 +6,37 @@
         xmlns:local="clr-namespace:ACHSGate"
         mc:Ignorable="d"
         Title="commonInfo"  Height="700" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None">
-	<Window.Background>
-		<ImageBrush ImageSource="Resources/Images/Home.jpg"/>
-	</Window.Background>
-	<Grid>
-		<TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Common Infomation" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35" Margin="1,174,0,0"/>
-		<Label Content="Vehicle Name :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="40,442,0,0"/>
-		<ComboBox  x:Name="cmbBrand" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,371,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbBrand_SelectionChanged" />
-		<ComboBox  x:Name="cmbType" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,276,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbType_SelectionChanged">
-			<ComboBoxItem>Motor Bicycle </ComboBoxItem>
-			<ComboBoxItem>Three Wheeler</ComboBoxItem>
-			
-		</ComboBox>
-		<Label Content="Vehicle Type :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="40,276,0,0"/>
-		<Label Content="Brand : " FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="40,372,0,0"/>
-		<TextBox  x:Name="txtBrand" HorizontalAlignment="Left" Height="38" Margin="513,371,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313"/>
-		<Button x:Name="AddBrand" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="847,371,0,0" VerticalAlignment="Top" Width="126" Click="AddBrand_Click" />
-		<ComboBox  x:Name="cmbName" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,442,0,0" VerticalAlignment="Top" Width="313"/>
-		<TextBox  x:Name="txtName" HorizontalAlignment="Left" Height="38" Margin="513,442,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313"/>
-		<Button x:Name="AddName" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="847,442,0,0" VerticalAlignment="Top" Width="126" Click="AddName_Click" />
-		<Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="829,623,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click"/>
-	</Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/Images/background1.jpg"/>
+    </Window.Background>
+    <Grid>
+        <TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Common Infomation" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35" Margin="1,-1,0,0"/>
+        <Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="840,536,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click"/>
+
+        <GroupBox FontSize="20" FontWeight="Bold" Header="Edit Common Details" HorizontalAlignment="Left" Height="311" Margin="10,98,0,0" VerticalAlignment="Top" Width="998">
+            <Grid Margin="0,0,-2,-3.4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="27*"/>
+                    <ColumnDefinition Width="92*"/>
+                    <ColumnDefinition Width="868*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Name :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="20,193,0,0" Grid.ColumnSpan="3"/>
+                <ComboBox  x:Name="cmbBrand" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="38.337,122,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbBrand_SelectionChanged" Grid.Column="2" />
+                <ComboBox  x:Name="cmbType" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="38.337,27,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbType_SelectionChanged" Grid.Column="2">
+                    <ComboBoxItem>Motor Bicycle</ComboBoxItem>
+                    <ComboBoxItem>Three Wheeler</ComboBoxItem>
+
+                </ComboBox>
+                <Label Content="Vehicle Type :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="20,27,0,0" Grid.ColumnSpan="3"/>
+                <Label Content="Brand : " FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="20,123,0,0" Grid.ColumnSpan="3"/>
+                <TextBox  x:Name="txtBrand" HorizontalAlignment="Left" Height="38" Margin="373.337,122,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313" Grid.Column="2"/>
+                <Button x:Name="AddBrand" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="707.337,122,0,0" VerticalAlignment="Top" Width="126" Click="AddBrand_Click" Grid.Column="2" />
+                <ComboBox  x:Name="cmbName" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="38.337,193,0,0" VerticalAlignment="Top" Width="313" Grid.Column="2"/>
+                <TextBox  x:Name="txtName" HorizontalAlignment="Left" Height="38" Margin="373.337,192,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313" Grid.Column="2"/>
+                <Button x:Name="AddName" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="707.337,193,0,0" VerticalAlignment="Top" Width="126" Click="AddName_Click" Grid.Column="2" />
+
+
+            </Grid>
+        </GroupBox>
+    </Grid>
 </Window>

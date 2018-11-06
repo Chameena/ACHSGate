@@ -11,11 +11,8 @@
 	</Window.Background>
 	<Grid>
 		<Button x:Name="registerVehicle" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Register Vehicle" HorizontalAlignment="Left" Height="66" Margin="23,294,0,0" VerticalAlignment="Top" Width="204" Click="resigter_click"/>
-		<Button x:Name="costAdding" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Cost Adding" HorizontalAlignment="Left" Height="66" Margin="529,388,0,0" VerticalAlignment="Top" Width="204" Click="costAdding_Click"/>
 		<Button x:Name="calculator" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Payment Calculator" HorizontalAlignment="Left" Height="66" Margin="275,294,0,0" VerticalAlignment="Top" Width="204" Click="calculator_Click"/>
 		<Button x:Name="brandAdd" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Add Common Info." HorizontalAlignment="Left" Height="66" Margin="529,294,0,0" VerticalAlignment="Top" Width="204" Click="brandAdd_Click"/>
-		<Button x:Name="sellVehicle" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Sell a Vehicle" HorizontalAlignment="Left" Height="66" Margin="23,388,0,0" VerticalAlignment="Top" Width="204" Click="sellVehicle_Click"/>
-		<Button x:Name="viewCost" Style="{StaticResource ButtonStyle}" FontSize="20" Content="View Cost" HorizontalAlignment="Left" Height="66" Margin="275,388,0,0" VerticalAlignment="Top" Width="204" Click="viewCost_Click"/>
 		<Button x:Name="sign_off" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Sign Off" HorizontalAlignment="Left" Height="66" Margin="790,584,0,0" VerticalAlignment="Top" Width="204" Click="sign_off_Click"/>
 
 	</Grid>

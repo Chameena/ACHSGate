@@ -46,7 +46,7 @@
 
 			</Grid>
 		</GroupBox>
-		<GroupBox FontSize="20" FontWeight="Bold" Header="Owner Info." HorizontalAlignment="Left" Height="270" Margin="10,377,0,0" VerticalAlignment="Top" Width="996">
+		<GroupBox FontSize="20" FontWeight="Bold" Header="Owner Info." HorizontalAlignment="Left" Height="258" Margin="10,377,0,0" VerticalAlignment="Top" Width="996">
 			<Grid>
 				<Label Content="Full Name :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="22,25,0,0"/>
 				<Label Content="NIC :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="22,78,0,0"/>
@@ -64,9 +64,9 @@
 			</Grid>
 		</GroupBox>
 		<TextBlock x:Name="txtvehicle" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vehicle Registration" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35"/>
-		<Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="480,635,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click"/>
-		<Button x:Name="save" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Save" HorizontalAlignment="Left" Height="49" Margin="834,635,0,0" VerticalAlignment="Top" Width="144" Click="save_click"/>
-		<Button x:Name="reset" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Reset" HorizontalAlignment="Left" Height="49" Margin="658,635,0,0" VerticalAlignment="Top" Width="144" Click="reset_Click"/>
+		<Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="474,637,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click"/>
+		<Button x:Name="save" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Save" HorizontalAlignment="Left" Height="49" Margin="837,637,0,0" VerticalAlignment="Top" Width="144" Click="save_click"/>
+		<Button x:Name="reset" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Reset" HorizontalAlignment="Left" Height="49" Margin="658,637,0,0" VerticalAlignment="Top" Width="144" Click="reset_Click"/>
 
 	</Grid>
 </Window>

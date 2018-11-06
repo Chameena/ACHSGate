@@ -10,7 +10,7 @@
         <ImageBrush ImageSource="Resources/Images/background1.jpg"/>
     </Window.Background>
     <Grid>
-        <TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="View Vehivle Details" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35"/>
+        <TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="View Vehicle Details" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35"/>
         <GroupBox FontSize="20" FontWeight="Bold" Header="Enter Registration Number" HorizontalAlignment="Left" Height="105" Margin="10,63,0,0" VerticalAlignment="Top" Width="787">
             <Grid Margin="0,0,-2,-3.4">
                 <Label Content="Reg. Number :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,19,0,0"/>

@@ -10,7 +10,7 @@
 		<ImageBrush ImageSource="Resources/Images/Home.jpg"/>
 	</Window.Background>
 	<Grid>
-		<TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Common Inventory Adding" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35" Margin="1,174,0,0"/>
+		<TextBlock x:Name="txtcalc"  HorizontalAlignment="Left" TextWrapping="Wrap" Text="Common Inventory Adding" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35" Margin="1,174,0,0"/>
 		<ComboBox  x:Name="cmbBrand" HorizontalAlignment="Left" Height="38" Margin="306,249,0,0" VerticalAlignment="Top" Width="494" />
 		<Label Content="Item Key :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="13,250,0,0"/>
 		<TextBox  x:Name="txtLoanAmount_Copy" HorizontalAlignment="Left" Height="38" Margin="105,248,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="183"/>

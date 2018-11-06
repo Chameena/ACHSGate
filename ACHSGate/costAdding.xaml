@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:ACHSGate"
         mc:Ignorable="d"
         Title="costAdding" Height="700" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None">
-	<Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/Images/background1.jpg"/>
+    </Window.Background>
+    <Grid>
 		<TextBlock x:Name="txtcost" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cost Adding" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35"/>
 		<GroupBox FontSize="20" FontWeight="Bold" Header="Cost Adding" HorizontalAlignment="Left" Height="292" Margin="10,63,0,0" VerticalAlignment="Top" Width="996">
 			<Grid>
@@ -29,7 +32,7 @@
 				<DatePicker  x:Name="dpDate" HorizontalAlignment="Left" Height="38" Margin="146,60,0,0" FontSize="15" VerticalAlignment="Top" Width="295" Grid.Column="1"/>
 			</Grid>
 		</GroupBox>
-		<DataGrid x:Name="costGrid" GridLinesVisibility="None" AutoGenerateColumns="False" HorizontalAlignment="Left" CanUserAddRows="False" CanUserResizeColumns="False" CanUserResizeRows="False"  Height="322" Margin="10,360,0,0" VerticalAlignment="Top" Width="996" SourceUpdated="costGrid_SourceUpdated" LoadingRow="costGrid_LoadingRow"  >
+		<DataGrid x:Name="costGrid" GridLinesVisibility="None" AutoGenerateColumns="False" HorizontalAlignment="Left" CanUserAddRows="False" CanUserResizeColumns="False" CanUserResizeRows="False"  Height="264" Margin="10,360,0,0" VerticalAlignment="Top" Width="996" SourceUpdated="costGrid_SourceUpdated" LoadingRow="costGrid_LoadingRow"  >
 			<DataGrid.RowBackground>
 				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 					<GradientStop Color="White" Offset="1"/>

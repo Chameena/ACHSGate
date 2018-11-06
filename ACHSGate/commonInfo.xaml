@@ -12,19 +12,19 @@
 	<Grid>
 		<TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Common Infomation" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35" Margin="1,174,0,0"/>
 		<Label Content="Vehicle Name :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="40,442,0,0"/>
-		<ComboBox  x:Name="cmbBrand" HorizontalAlignment="Left" Height="38" Margin="178,371,0,0" VerticalAlignment="Top" Width="313" />
-		<ComboBox  x:Name="cmbType" HorizontalAlignment="Left" Height="38" Margin="178,276,0,0" VerticalAlignment="Top" Width="313">
-			<ComboBoxItem>Motor Bicycle</ComboBoxItem>
+		<ComboBox  x:Name="cmbBrand" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,371,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbBrand_SelectionChanged" />
+		<ComboBox  x:Name="cmbType" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,276,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbType_SelectionChanged">
+			<ComboBoxItem>Motor Bicycle </ComboBoxItem>
 			<ComboBoxItem>Three Wheeler</ComboBoxItem>
-			<ComboBoxItem>Other</ComboBoxItem>
+			
 		</ComboBox>
 		<Label Content="Vehicle Type :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="40,276,0,0"/>
 		<Label Content="Brand : " FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="40,372,0,0"/>
-		<TextBox  x:Name="txtLoanAmount_Copy" HorizontalAlignment="Left" Height="38" Margin="513,371,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313"/>
-		<Button x:Name="cal" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="847,371,0,0" VerticalAlignment="Top" Width="126" Click="cal_Click" />
-		<ComboBox  x:Name="cmbBrand_Copy" HorizontalAlignment="Left" Height="38" Margin="178,442,0,0" VerticalAlignment="Top" Width="313"/>
-		<TextBox  x:Name="txtLoanAmount_Copy1" HorizontalAlignment="Left" Height="38" Margin="513,442,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313"/>
-		<Button x:Name="cal_Copy" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="847,442,0,0" VerticalAlignment="Top" Width="126" Click="cal_Click" />
+		<TextBox  x:Name="txtBrand" HorizontalAlignment="Left" Height="38" Margin="513,371,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313"/>
+		<Button x:Name="AddBrand" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="847,371,0,0" VerticalAlignment="Top" Width="126" Click="AddBrand_Click" />
+		<ComboBox  x:Name="cmbName" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,442,0,0" VerticalAlignment="Top" Width="313"/>
+		<TextBox  x:Name="txtName" HorizontalAlignment="Left" Height="38" Margin="513,442,0,0" TextWrapping="Wrap" FontWeight="Bold" Text="" FontSize="18" VerticalAlignment="Top" Width="313"/>
+		<Button x:Name="AddName" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="39" Margin="847,442,0,0" VerticalAlignment="Top" Width="126" Click="AddName_Click" />
 		<Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="829,623,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click"/>
 	</Grid>
 </Window>

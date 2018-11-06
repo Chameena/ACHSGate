@@ -44,7 +44,8 @@ namespace ACHSGate
 
         private void brandAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            commonInfo common = new commonInfo();
+            common.ShowDialog();
         }
 
         private void sellVehicle_Click(object sender, RoutedEventArgs e)
@@ -55,6 +56,12 @@ namespace ACHSGate
         private void viewCost_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void sign_off_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.ShowDialog();
         }
     }
 }

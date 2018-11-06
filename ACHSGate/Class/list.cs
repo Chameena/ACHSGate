@@ -11,11 +11,11 @@ namespace ACHSGate.Class
 {
   public  class list
     {
-        public static List<brand> Brand(int parentKey)
+        public static List<brand> Brand(int parentKey,string type)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from [dbo].[brandComboLoad] where parentKey = '"+ parentKey + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from [dbo].[brandComboLoad] where parentKey = '"+ parentKey + "' and type ='" + type + "' ", con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader dr;
             dr = cmd.ExecuteReader();

@@ -33,10 +33,10 @@
 				<TextBox  x:Name="txtremarks" HorizontalAlignment="Left" Height="38" Margin="601,165,0,0" VerticalAlignment="Top" Width="313" Grid.Column="1"/>
 
 				<ComboBox  x:Name="cmbBrand" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="601,64,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbBrand_SelectionChanged"/>
-				<ComboBox  x:Name="cmbType" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="601,15,0,0" VerticalAlignment="Top" Width="313">
+				<ComboBox  x:Name="cmbType" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="601,15,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbType_SelectionChanged">
 					<ComboBoxItem>Motor Bicycle</ComboBoxItem>
 					<ComboBoxItem>Three Wheeler</ComboBoxItem>
-					<ComboBoxItem>Other</ComboBoxItem>
+					
 				</ComboBox>
 				<ComboBox  x:Name="cmbName" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="601,114,0,0" VerticalAlignment="Top" Width="313"/>
 				<Label x:Name="revenuelbl"  Content="" FontWeight="Bold" FontSize="15" Height="60"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="129" Margin="0,207,0,0" Grid.ColumnSpan="2"/>

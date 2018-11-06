@@ -30,13 +30,17 @@ namespace ACHSGate
             InitializeComponent();
             insuranceLbl.Content = "Insurance \r\nValid Till :";
             revenuelbl.Content = "Revenue License \r\nValid Till :";
-
-            loadBrandCmb();
+  
         }
 
+        public string type;
         public void loadBrandCmb()
         {
-            List<brand> brandList = list.Brand(0);
+
+            ComboBoxItem item = (ComboBoxItem)cmbType.SelectedItem;
+            type = item.Content.ToString();
+
+            List<brand> brandList = list.Brand(0, type);
             cmbBrand.ItemsSource = brandList;
             cmbBrand.DisplayMemberPath = "name";
             cmbBrand.SelectedValuePath = "brandKey";
@@ -44,7 +48,11 @@ namespace ACHSGate
 
         public void loadNameCmb()
         {
-            List<brand> nameList = list.Brand(Convert.ToInt32(cmbBrand.SelectedValue));
+
+            ComboBoxItem item = (ComboBoxItem)cmbType.SelectedItem;
+            type = item.Content.ToString();
+
+            List<brand> nameList = list.Brand(Convert.ToInt32(cmbBrand.SelectedValue), type);
             cmbName.ItemsSource = nameList;
             cmbName.DisplayMemberPath = "name";
             cmbName.SelectedValuePath = "name";
@@ -156,6 +164,11 @@ namespace ACHSGate
         {
             var textBox = sender as TextBox;
             e.Handled = Regex.IsMatch(e.Text, "[^0-9.]+");
+        }
+
+        private void cmbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            loadBrandCmb();
         }
     }
 }

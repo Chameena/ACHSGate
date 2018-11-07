@@ -26,7 +26,17 @@ namespace ACHSGate
         public costAdding()
         {
             InitializeComponent();
+
+            DataTable dt = new DataTable();
+            
+            dt.Columns.Add("costId");
+            dt.Columns.Add("desc");
+            dt.Columns.Add("value");
+
+            costGrid.ItemsSource = dt.DefaultView;
+
             loadVehicleNoCmb();
+
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -48,6 +58,9 @@ namespace ACHSGate
             cmbvehiNo.SelectedValuePath = "vehicleNo";
         }
 
+        public int OldcostId;
+        public int NewcostId;
+
         private void add_Click(object sender, RoutedEventArgs e)
         {
             string vehicleNo = cmbvehiNo.Text;
@@ -58,15 +71,28 @@ namespace ACHSGate
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
                 con.Open();
+
+                SqlCommand cmd1 = new SqlCommand("select MAX(costId) from cost", con);
+                cmd1.CommandType = CommandType.Text;
+                using (SqlDataReader reader = cmd1.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        OldcostId = Convert.ToInt32(reader[0]);
+                        NewcostId = OldcostId + 1;
+                    }
+                }
+                
                 SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[cost] ([vehicleNo],[date],[costType],[costPrice]) VALUES ('" + vehicleNo + "','" + date + "','" + desc + "','" + value + "'", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
 
+               
                 DataView dv = costGrid.ItemsSource as DataView;
                 DataTable dt = dv.Table;
                 DataRow dr = dt.NewRow();
 
-                dr["costId"] = "";
+                dr["costId"] = NewcostId;
                 dr["desc"] = desc;
                 dr["value"] = value;
                 dt.Rows.Add(dr);
@@ -110,7 +136,7 @@ namespace ACHSGate
             cmbvehiNo.Text ="";
             txtdesc.Text = "";
             txtvalue.Text = "";
-           dpDate.Text = "";
+            dpDate.Text = "";
         }
         private void reset_Click(object sender, RoutedEventArgs e)
         {

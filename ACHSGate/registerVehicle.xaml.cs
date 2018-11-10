@@ -31,7 +31,9 @@ namespace ACHSGate
             insuranceLbl.Content = "Insurance \r\nValid Till :";
             revenuelbl.Content = "Revenue License \r\nValid Till :";
             dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-     }
+            cmbType.SelectedIndex = 0;
+
+        }
 
         public string type;
         public void loadBrandCmb()

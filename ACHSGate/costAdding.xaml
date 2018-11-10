@@ -21,7 +21,7 @@
 				<Label Content="Description : " FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,103,0,0" Grid.Column="1"/>
 				<Label Content="Value :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="659,103,0,0" Grid.Column="1"/>
 				<TextBox  x:Name="txtdesc" HorizontalAlignment="Left" Height="38" Margin="10,146,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="631" Grid.Column="1"/>
-				<TextBox  x:Name="txtvalue" HorizontalAlignment="Left" Height="38" Margin="659,146,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="288" Grid.Column="1"/>
+				<TextBox  x:Name="txtvalue" HorizontalAlignment="Left" Height="38" Margin="659,146,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="288" Grid.Column="1" PreviewTextInput="txtvalue_PreviewTextInput"/>
 				<ComboBox  x:Name="cmbvehiNo" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="146,10,0,0" VerticalAlignment="Top" Width="295" SelectionChanged="cmbvehiNo_SelectionChanged"/>
 				<Button x:Name="add" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="49" Margin="803,199,0,0" VerticalAlignment="Top" Width="144" Grid.Column="1" Click="add_Click"/>
 				<Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="454,199,0,0" VerticalAlignment="Top" Width="144" Grid.Column="1" Click="cancel_Click"/>

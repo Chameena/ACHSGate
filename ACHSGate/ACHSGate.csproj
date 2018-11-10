@@ -58,6 +58,9 @@
     <Compile Include="Class\cost.cs" />
     <Compile Include="Class\list.cs" />
     <Compile Include="Class\vehicle.cs" />
+    <Compile Include="confirmationAlert.xaml.cs">
+      <DependentUpon>confirmationAlert.xaml</DependentUpon>
+    </Compile>
     <Compile Include="commonInfo.xaml.cs">
       <DependentUpon>commonInfo.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <DependentUpon>viewVehicleInfo.xaml</DependentUpon>
     </Compile>
     <Page Include="alert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="confirmationAlert.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

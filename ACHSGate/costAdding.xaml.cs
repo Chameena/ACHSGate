@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,21 +28,27 @@ namespace ACHSGate
         {
             InitializeComponent();
             loadVehicleNoCmb();
+            dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
       public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            foreach (object itm in costGrid.SelectedItems)
+            confirmationAlert alert = new confirmationAlert("Are you sure you want to delete this record?");
+            if (alert.GetConfirmation())
             {
-                con.Open();
-                cost item = (cost)itm;
-                SqlCommand cmd = new SqlCommand("Delete from [dbo].[cost] where costId = '"+item.costId+"' ", con);
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
-                con.Close();
-             }
-            loadDetailsGrid();
+                foreach (object itm in costGrid.SelectedItems)
+                {
+                    con.Open();
+                    cost item = (cost)itm;
+                    SqlCommand cmd = new SqlCommand("Delete from [dbo].[cost] where costId = '" + item.costId + "' ", con);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                loadDetailsGrid();
+            }
+            
         }
 
         public void loadDetailsGrid()
@@ -63,49 +70,44 @@ namespace ACHSGate
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            string vehicleNo = cmbvehiNo.Text;
-            string desc = txtdesc.Text;
-            decimal value = Math.Round(Convert.ToDecimal(txtvalue.Text),2);
-            string date = dpDate.SelectedDate.Value.ToString("yyyy-MM-dd"); 
-            try
+            if (cmbvehiNo.Text == "" || txtdesc.Text==""||txtvalue.Text=="")
             {
-                 con.Open();
-
-                SqlCommand cmd1 = new SqlCommand("select MAX(costId) from cost", con);
-                cmd1.CommandType = CommandType.Text;
-                using (SqlDataReader reader = cmd1.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        OldcostId = Convert.ToInt32(reader[0]);
-                        NewcostId = OldcostId + 1;
-                    }
-                }
-                
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[cost] ([vehicleNo],[date],[costType],[costPrice]) VALUES ('" + vehicleNo + "','" + date + "','" + desc + "','" + value + "')", con);
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
-                con.Close();
-                loadDetailsGrid();
-            }
-
-            catch (Exception ex)
-            {
-                alert alert = new alert("Adding Failed");
+                alert alert = new alert("Fill all the details");
                 alert.ShowDialog();
             }
+            else
+            {
+                string vehicleNo = cmbvehiNo.Text;
+                string desc = txtdesc.Text;
+                decimal value = Math.Round(Convert.ToDecimal(txtvalue.Text), 2);
+                string date = dpDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[cost] ([vehicleNo],[date],[costType],[costPrice]) VALUES ('" + vehicleNo + "','" + date + "','" + desc + "','" + value + "')", con);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    loadDetailsGrid();
+
+                    txtdesc.Text = "";
+                    txtvalue.Text = "";
+                    dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+
+                catch (Exception ex)
+                {
+                    alert alert = new alert("Adding Failed");
+                    alert.ShowDialog();
+                }
+            }
+            
         }
 
         private void cmbvehiNo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbvehiNo.Text == "")
-            {
-
-            }
-            else
-            {
-                loadDetailsGrid();
-            }
+            loadDetailsGrid();
+            calculateTotal();
            
         }
 
@@ -131,13 +133,10 @@ namespace ACHSGate
         }
 
         private void clearDetails()
-        {
-            cmbvehiNo.Text ="";
-            txtdesc.Text = "";
+        {   txtdesc.Text = "";
             txtvalue.Text = "";
-            dpDate.Text = "";
-            costGrid.ItemsSource = "";
-            txtTotal.Text = "";
+            dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            calculateTotal();
         }
 
         private void reset_Click(object sender, RoutedEventArgs e)
@@ -153,6 +152,12 @@ namespace ACHSGate
         private void costGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             calculateTotal();
+        }
+
+        private void txtvalue_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            e.Handled = Regex.IsMatch(e.Text, "[^0-9.]+");
         }
     }
 }

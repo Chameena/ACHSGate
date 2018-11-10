@@ -30,8 +30,8 @@ namespace ACHSGate
             InitializeComponent();
             insuranceLbl.Content = "Insurance \r\nValid Till :";
             revenuelbl.Content = "Revenue License \r\nValid Till :";
-  
-        }
+            dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+     }
 
         public string type;
         public void loadBrandCmb()
@@ -59,66 +59,72 @@ namespace ACHSGate
         }
 
         private void save_click(object sender, RoutedEventArgs e)
-        {
-            string vehicleNo = txtvehiNo.Text;
-            string engNo = txtengNo.Text;
-            string chassiNo = txtchassiNo.Text;
-            string type = cmbType.Text;
-            string brand = cmbBrand.Text;
-            string name = cmbName.Text;
-            float price = (float)Convert.ToDouble(txtiniprice.Text);
-            string remarks = txtremarks.Text;
-
-            //string revenueDateOld = dpRevenueDate.SelectedDate.ToString();
-            //string[] Rdate = revenueDateOld.Split(' ');
-            //string revenueDate = Rdate[0];
-            string revenueDate = dpRevenueDate.SelectedDate.Value.ToString("yyyy-MM-dd");
-            //DateTime.ParseExact(dpRevenueDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
-
-            //string insuranceDateOld = dpInsuranceDate.SelectedDate.ToString();
-            //string[] Idate = insuranceDateOld.Split(' ');
-            //string insuranceDate = Idate[0];
-            string insuranceDate = dpInsuranceDate.SelectedDate.Value.ToString("yyyy-MM-dd");
-            //DateTime.ParseExact(dpInsuranceDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
-
-
-            string fullname = txtfullname.Text;
-            string nic = txtnic.Text;
-            int tpNo = Convert.ToInt32(txttpNo.Text) ;
-            //string dateOld = dpDate.SelectedDate.ToString();
-            // string[] Ddate = dateOld.Split(' ');
-            // string date = Ddate[0];
-            string date = dpDate.SelectedDate.Value.ToString("yyyy-MM-dd");
-            //DateTime.ParseExact(dpDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
-
-            string testDate = "" ;
-
-            string address = txtaddress.Text;
-
-            try
+        { 
+            if (txtvehiNo.Text == "" || txtengNo.Text == "" || txtchassiNo.Text == "" || cmbType.Text == "" || cmbBrand.Text=="" || cmbName.Text == "" || txtiniprice.Text == "" || txtremarks.Text == "" || dpInsuranceDate.Text == "" || dpRevenueDate.Text == "" || txtfullname.Text == "" || txtnic.Text == "" || txttpNo.Text == "" || dpDate.Text == "" || txtaddress.Text == "")
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[vehicle] ([vehicleNo],[engineNo],[chassiNo],[type],[brand],[name],[initialPrice],[insuranceDate],[revenueDate]) VALUES ('"+vehicleNo+"','"+engNo+"','"+chassiNo+"','"+type+"','"+brand+"','"+name+"', '"+price+ "', '" + insuranceDate + "', '" + revenueDate + "') ", con);
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
-
-                SqlCommand cmd1 = new SqlCommand("INSERT INTO [dbo].[owner] ([vehicleNo],[preName],[preAddress],[preNic],[preTpno],[buyDate],[sellDate],[nextName] ,[nextAddress],[nextNic] ,[nextTpno]) VALUES ('" + vehicleNo + "','" + fullname + "','" + address + "','" + nic + "','" + tpNo + "','" + date + "','" + testDate + "','null','null','null',0)", con);
-                cmd1.CommandType = CommandType.Text;
-                cmd1.ExecuteNonQuery();
-                con.Close();
-
-                alert alert = new alert("Added Successfully");
-                alert.ShowDialog();
-                clearFields();
-            }
-            catch (Exception ex)
-            {
-                alert alert = new alert("Adding Failed");
+                alert alert = new alert("Fill all the details!");
                 alert.ShowDialog();
             }
-          
-            
+            else {
+
+                string vehicleNo = txtvehiNo.Text;
+                string engNo = txtengNo.Text;
+                string chassiNo = txtchassiNo.Text;
+                string type = cmbType.Text;
+                string brand = cmbBrand.Text;
+                string name = cmbName.Text;
+                float price = (float)Convert.ToDouble(txtiniprice.Text);
+                string remarks = txtremarks.Text;
+
+                //string revenueDateOld = dpRevenueDate.SelectedDate.ToString();
+                //string[] Rdate = revenueDateOld.Split(' ');
+                //string revenueDate = Rdate[0];
+                string revenueDate = dpRevenueDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+                //DateTime.ParseExact(dpRevenueDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
+
+                //string insuranceDateOld = dpInsuranceDate.SelectedDate.ToString();
+                //string[] Idate = insuranceDateOld.Split(' ');
+                //string insuranceDate = Idate[0];
+                string insuranceDate = dpInsuranceDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+                //DateTime.ParseExact(dpInsuranceDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
+
+
+                string fullname = txtfullname.Text;
+                string nic = txtnic.Text;
+                int tpNo = Convert.ToInt32(txttpNo.Text);
+                //string dateOld = dpDate.SelectedDate.ToString();
+                // string[] Ddate = dateOld.Split(' ');
+                // string date = Ddate[0];
+                string date = dpDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+                //DateTime.ParseExact(dpDate.Text, "yyyy/MM/dd", CultureInfo.CreateSpecificCulture("en-UK"));
+
+                string testDate = "";
+
+                string address = txtaddress.Text;
+
+                try
+                {
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[vehicle] ([vehicleNo],[engineNo],[chassiNo],[type],[brand],[name],[initialPrice],[insuranceDate],[revenueDate]) VALUES ('" + vehicleNo + "','" + engNo + "','" + chassiNo + "','" + type + "','" + brand + "','" + name + "', '" + price + "', '" + insuranceDate + "', '" + revenueDate + "') ", con);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+
+                    SqlCommand cmd1 = new SqlCommand("INSERT INTO [dbo].[owner] ([vehicleNo],[preName],[preAddress],[preNic],[preTpno],[buyDate],[sellDate],[nextName] ,[nextAddress],[nextNic] ,[nextTpno]) VALUES ('" + vehicleNo + "','" + fullname + "','" + address + "','" + nic + "','" + tpNo + "','" + date + "','" + testDate + "','null','null','null',0)", con);
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.ExecuteNonQuery();
+                    con.Close();
+
+                    alert alert = new alert("Added Successfully");
+                    alert.ShowDialog();
+                    clearFields();
+                }
+                catch (Exception ex)
+                {
+                    alert alert = new alert("Adding Failed");
+                    alert.ShowDialog();
+                }
+               }
         }
 
         private void cmbBrand_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -141,16 +147,18 @@ namespace ACHSGate
             txtvehiNo.Text = "";
             txtengNo.Text = "";
             txtchassiNo.Text = "";
-            cmbType.Text = "";
-            cmbBrand.Text = "";
-            cmbName.Text = "";
+            cmbType.SelectedIndex = 0;
+            cmbBrand.ItemsSource = null;
+            cmbName.ItemsSource = null;
             txtiniprice.Text = "";
             txtremarks.Text = "";
+            dpInsuranceDate.Text = "";
+            dpRevenueDate.Text = "";
 
             txtfullname.Text = "";
             txtnic.Text = "";
             txttpNo.Text = "";
-            dpDate.Text = "";
+            dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtaddress.Text = "";
         }
 

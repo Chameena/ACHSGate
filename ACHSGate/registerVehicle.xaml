@@ -34,6 +34,7 @@
 
 				<ComboBox  x:Name="cmbBrand" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="601,64,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbBrand_SelectionChanged"/>
 				<ComboBox  x:Name="cmbType" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="601,15,0,0" VerticalAlignment="Top" Width="313" SelectionChanged="cmbType_SelectionChanged">
+					<ComboBoxItem>--Please Select--</ComboBoxItem>
 					<ComboBoxItem>Motor Bicycle</ComboBoxItem>
 					<ComboBoxItem>Three Wheeler</ComboBoxItem>
 					

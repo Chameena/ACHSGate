@@ -33,8 +33,7 @@ namespace ACHSGate
 
         private void viewcost_Click(object sender, RoutedEventArgs e)
         {
-            costAdding cost = new costAdding(cmbVehiNo.Text);
-            this.Close();
+            costAdding cost = new costAdding(cmbVehiNo.Text);;
             cost.ShowDialog();
         }
 

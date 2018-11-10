@@ -11,21 +11,47 @@
     </Window.Background>
     <Grid>
         <TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="View Vehicle Details" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35"/>
-        <GroupBox FontSize="20" FontWeight="Bold" Header="Enter Registration Number" HorizontalAlignment="Left" Height="105" Margin="10,63,0,0" VerticalAlignment="Top" Width="787">
+        <GroupBox FontSize="20" FontWeight="Bold" Header="Enter Registration Number" HorizontalAlignment="Left" Height="105" Margin="10,63,0,0" VerticalAlignment="Top" Width="987">
             <Grid Margin="0,0,-2,-3.4">
                 <Label Content="Reg. Number :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,19,0,0"/>
-                <TextBox  x:Name="TextFieldregNumber" HorizontalAlignment="Left" Height="38" Margin="511,19,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="259"/>
                 <ComboBox  x:Name="cmbregNumber" HorizontalAlignment="Left" Height="38" Margin="181,19,0,0" VerticalAlignment="Top" Width="295" />
             </Grid>
         </GroupBox>
-        <GroupBox FontSize="20" FontWeight="Bold" Header="Vehicle Details" HorizontalAlignment="Left" Height="420" Margin="10,173,0,0" VerticalAlignment="Top" Width="998">
-            <Grid Margin="0,0,-2,-3.4">
-                <Label Content="label :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,19,0,0"/>
-                <Label Content="label :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,62,0,0"/>
-                <Label Content="label :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,105,0,0"/>
-                <Label Content="label :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,143,0,0"/>
-                <Label Content="label :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,181,0,0"/>
-                <Label Content="label :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="30,224,0,0"/>
+        <GroupBox FontSize="20" FontWeight="Bold" Header="Vehicle Details" HorizontalAlignment="Left" Height="357" Margin="10,168,0,0" VerticalAlignment="Top" Width="311">
+            <Grid>
+                <Label Content="Name :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,34,0,0"/>
+                <Label Content="Engine No:" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,91,0,0" RenderTransformOrigin="0.479,0.884"/>
+                <Label Content="Chassy No :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,149,0,0"/>
+
+                <Label Content="Rev. Li. Valied :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,207,0,0"/>
+                <Label Content="Lisence Valid :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,264,0,0"/>
+                <TextBox  x:Name="txtname" HorizontalAlignment="Left" Height="38" Margin="133,34,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <TextBox  x:Name="txteng" HorizontalAlignment="Left" Height="38" Margin="133,91,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <TextBox  x:Name="txtchassy" HorizontalAlignment="Left" Height="38" Margin="133,149,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <TextBox  x:Name="txtrevenue" HorizontalAlignment="Left" Height="38" Margin="133,207,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <TextBox  x:Name="txtlicense" HorizontalAlignment="Left" Height="38" Margin="132,264,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="156"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox FontSize="20" FontWeight="Bold" Header="Past Owner Details" HorizontalAlignment="Left" Height="352" Margin="350,173,0,0" VerticalAlignment="Top" Width="311">
+            <Grid>
+                <Label Content="Name :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,25,0,0"/>
+                <Label Content="Phone No:" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,82,0,0" RenderTransformOrigin="0.479,0.884"/>
+                <Label Content="NIC No :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,140,0,0"/>
+                <TextBox  x:Name="txtownername" HorizontalAlignment="Left" Height="38" Margin="133,25,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <TextBox  x:Name="txtownerphone" HorizontalAlignment="Left" Height="38" Margin="133,82,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <TextBox  x:Name="txtownernic" HorizontalAlignment="Left" Height="38" Margin="133,140,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox FontSize="20" FontWeight="Bold" Header="Price Devision" HorizontalAlignment="Left" Height="352" Margin="686,173,0,0" VerticalAlignment="Top" Width="311">
+            <Grid>
+                <Label Content="Initial :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,25,0,0"/>
+                <Label Content="Total Cost:" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="112" Margin="10,82,0,0" RenderTransformOrigin="0.479,0.884"/>
+
+                <TextBox  x:Name="txtowname" HorizontalAlignment="Left" Height="38" Margin="133,25,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <TextBox  x:Name="txtowrphone" HorizontalAlignment="Left" Height="38" Margin="133,82,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="viewcost" FontSize="20" Style="{StaticResource ButtonStyle}" Content="View Costs" HorizontalAlignment="Left" Height="41"  VerticalAlignment="Top" Width="278" Margin="10,141,0,0" />
             </Grid>
         </GroupBox>
         <Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="853,614,0,0" VerticalAlignment="Top" Width="144" />

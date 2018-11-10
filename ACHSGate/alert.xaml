@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ACHSGate"
         mc:Ignorable="d"
-        Title="alert" Height="200" Width="400" Background="#484848" WindowStyle="None" WindowStartupLocation="CenterScreen">
+        Title="alert" Height="200" Width="400" Background="#FF0A3E68" WindowStyle="None" WindowStartupLocation="CenterScreen">
     
 	<Grid HorizontalAlignment="Left" Width="392">
 		<Button x:Name="OK"   Content="OK" Margin="284,138,10,18" Background="White" Foreground="#FF0A3E68" FontSize="18" FontWeight="Bold" Click="OK_Click" IsDefault="True"/>

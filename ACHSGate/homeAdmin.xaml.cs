@@ -64,5 +64,11 @@ namespace ACHSGate
             this.Close();
             main.ShowDialog();
         }
+
+        private void costAdd_Click(object sender, RoutedEventArgs e)
+        {
+            costAdding cost = new costAdding();
+            cost.ShowDialog();
+        }
     }
 }

@@ -43,7 +43,7 @@
 			<DataGrid.Columns>
 				<!--<DataGridTextColumn x:Name="Gridgrn" IsReadOnly="True" ClipboardContentBinding="{x:Null}" Binding="{Binding Gridgrn, BindsDirectlyToSource=True, Mode=OneWay}" Width="50"  Header="GRN_No" Visibility="Hidden" />-->
 				<DataGridTextColumn x:Name="costId" IsReadOnly="True" ClipboardContentBinding="{x:Null}" Binding="{Binding costId, BindsDirectlyToSource=True, Mode=OneWay}" Width="50"  Header="TrnDt" Visibility="Hidden"/>
-				<DataGridTextColumn x:Name="desc" IsReadOnly="True" ClipboardContentBinding="{x:Null}" Binding="{Binding desc, BindsDirectlyToSource=True, Mode=OneWay}" FontSize="20" Width="600"  Header="Description"   />
+				<DataGridTextColumn x:Name="description" IsReadOnly="True" ClipboardContentBinding="{x:Null}" Binding="{Binding desc, BindsDirectlyToSource=True, Mode=OneWay}" FontSize="20" Width="600"  Header="Description"   />
 				<DataGridTextColumn x:Name="value" IsReadOnly="True" ClipboardContentBinding="{x:Null}" Binding="{Binding value, BindsDirectlyToSource=True, Mode=OneWay}" FontSize="20" Width="250"  Header="Value"  />
 
 				<DataGridTemplateColumn Width="120">

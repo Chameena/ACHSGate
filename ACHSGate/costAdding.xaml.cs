@@ -26,22 +26,22 @@ namespace ACHSGate
         public costAdding()
         {
             InitializeComponent();
-
-            DataTable dt = new DataTable();
-            
-            dt.Columns.Add("costId");
-            dt.Columns.Add("desc");
-            dt.Columns.Add("value");
-
-            costGrid.ItemsSource = dt.DefaultView;
-
             loadVehicleNoCmb();
-
         }
+      public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            foreach (object itm in costGrid.SelectedItems)
+            {
+                con.Open();
+                cost item = (cost)itm;
+                SqlCommand cmd = new SqlCommand("Delete from [dbo].[cost] where costId = '"+item.costId+"' ", con);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                con.Close();
+             }
+            loadDetailsGrid();
         }
 
         public void loadDetailsGrid()
@@ -66,11 +66,10 @@ namespace ACHSGate
             string vehicleNo = cmbvehiNo.Text;
             string desc = txtdesc.Text;
             decimal value = Math.Round(Convert.ToDecimal(txtvalue.Text),2);
-            DateTime date = Convert.ToDateTime(dpDate.Text);
+            string date = dpDate.SelectedDate.Value.ToString("yyyy-MM-dd"); 
             try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
-                con.Open();
+                 con.Open();
 
                 SqlCommand cmd1 = new SqlCommand("select MAX(costId) from cost", con);
                 cmd1.CommandType = CommandType.Text;
@@ -83,19 +82,11 @@ namespace ACHSGate
                     }
                 }
                 
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[cost] ([vehicleNo],[date],[costType],[costPrice]) VALUES ('" + vehicleNo + "','" + date + "','" + desc + "','" + value + "'", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[cost] ([vehicleNo],[date],[costType],[costPrice]) VALUES ('" + vehicleNo + "','" + date + "','" + desc + "','" + value + "')", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
-
-               
-                DataView dv = costGrid.ItemsSource as DataView;
-                DataTable dt = dv.Table;
-                DataRow dr = dt.NewRow();
-
-                dr["costId"] = NewcostId;
-                dr["desc"] = desc;
-                dr["value"] = value;
-                dt.Rows.Add(dr);
+                con.Close();
+                loadDetailsGrid();
             }
 
             catch (Exception ex)
@@ -107,7 +98,15 @@ namespace ACHSGate
 
         private void cmbvehiNo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            loadDetailsGrid();
+            if (cmbvehiNo.Text == "")
+            {
+
+            }
+            else
+            {
+                loadDetailsGrid();
+            }
+           
         }
 
         public void calculateTotal()
@@ -137,7 +136,10 @@ namespace ACHSGate
             txtdesc.Text = "";
             txtvalue.Text = "";
             dpDate.Text = "";
+            costGrid.ItemsSource = "";
+            txtTotal.Text = "";
         }
+
         private void reset_Click(object sender, RoutedEventArgs e)
         {
             clearDetails();

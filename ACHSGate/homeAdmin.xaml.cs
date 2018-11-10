@@ -30,12 +30,6 @@ namespace ACHSGate
             vehi.Show();
         }
 
-        private void costAdding_Click(object sender, RoutedEventArgs e)
-        {
-            costAdding cost = new costAdding();
-            cost.ShowDialog();
-        }
-
         private void calculator_Click(object sender, RoutedEventArgs e)
         {
             paymentCalc cal = new paymentCalc();
@@ -67,8 +61,14 @@ namespace ACHSGate
 
         private void costAdd_Click(object sender, RoutedEventArgs e)
         {
-            costAdding cost = new costAdding();
+            costAdding cost = new costAdding(null);
             cost.ShowDialog();
+        }
+
+        private void viewVehicleInfo_Click(object sender, RoutedEventArgs e)
+        {
+            viewVehicleInfo vehicle = new viewVehicleInfo();
+            vehicle.ShowDialog();
         }
     }
 }

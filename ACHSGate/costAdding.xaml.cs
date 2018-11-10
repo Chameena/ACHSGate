@@ -24,11 +24,21 @@ namespace ACHSGate
     /// </summary>
     public partial class costAdding : Window
     {
-        public costAdding()
+        public costAdding(string vehicleNo)
         {
             InitializeComponent();
-            loadVehicleNoCmb();
+            
             dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            if (vehicleNo != null)
+            {
+                loadVehicleNoCmb();
+                cmbvehiNo.Text = vehicleNo;
+            }
+            else
+            {
+                loadVehicleNoCmb();
+            }
         }
       public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
 

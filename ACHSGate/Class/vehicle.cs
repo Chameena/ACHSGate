@@ -22,5 +22,18 @@ namespace ACHSGate.Class
 
         public int price { get; set; }
 
+        public string revDate { get; set; }
+
+        public string insuDate { get; set; }
+
+        public string preName { get; set; }
+
+        public string preAddress { get; set; }
+
+        public string nic { get; set; }
+
+        public int tpNo { get; set; }
+
+        public string buyDate { get; set; }
     }
 }

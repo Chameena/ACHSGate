@@ -70,6 +70,68 @@ namespace ACHSGate.Class
             return cmp;
         }
 
+        public static vehicle vehicleInformation(string vehiNo)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT dbo.owner.*, dbo.vehicle.* FROM dbo.owner INNER JOIN dbo.vehicle ON dbo.owner.vehicleNo = dbo.vehicle.vehicleNo WHERE dbo.vehicle.vehicleNo = '" + vehiNo + "'", con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+
+            vehicle obj = new vehicle();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                   
+                    if (dr["vehicleNo"] != DBNull.Value)
+                        obj.vehicleNo = (dr["vehicleNo"]).ToString();
+
+                    if (dr["name"] != DBNull.Value)
+                        obj.name = (dr["name"]).ToString();
+
+                    if (dr["chassiNo"] != DBNull.Value)
+                        obj.chassiNo = (dr["chassiNo"]).ToString();
+
+                    if (dr["engineNo"] != DBNull.Value)
+                        obj.engNo = (dr["engineNo"]).ToString();
+
+                    if (dr["type"] != DBNull.Value)
+                        obj.type = (dr["type"]).ToString();
+
+                    if (dr["brand"] != DBNull.Value)
+                        obj.brand = (dr["brand"]).ToString();
+
+                    if (dr["initialPrice"] != DBNull.Value)
+                        obj.price = Convert.ToInt32(dr["initialPrice"]);
+
+                    if (dr["revenueDate"] != DBNull.Value)
+                        obj.revDate = (dr["revenueDate"]).ToString();
+
+                    if (dr["insuranceDate"] != DBNull.Value)
+                        obj.insuDate = (dr["insuranceDate"]).ToString();
+
+                    if (dr["preName"] != DBNull.Value)
+                        obj.preName = (dr["preName"]).ToString();
+
+                    if (dr["preAddress"] != DBNull.Value)
+                        obj.preAddress = (dr["preAddress"]).ToString();
+
+                    if (dr["preNic"] != DBNull.Value)
+                        obj.nic = (dr["preNic"]).ToString();
+
+                    if (dr["preTpno"] != DBNull.Value)
+                        obj.tpNo = Convert.ToInt32(dr["preTpno"]);
+
+                    if (dr["buyDate"] != DBNull.Value)
+                        obj.buyDate = (dr["buyDate"]).ToString();
+
+                    return obj;
+                }
+            }
+            return obj;
+        }
         public static List<cost> cost(string vehicleNo)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);

@@ -30,6 +30,8 @@ namespace ACHSGate
         }
         public string user;
         public string pass;
+       // public string today=  DateTime.Now.ToString("MM/dd/yyyy");
+        DateTime today = DateTime.Today;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (!password.Password.Equals("") && !username.Text.Equals(""))
@@ -44,7 +46,7 @@ namespace ACHSGate
             pass = password.Password;
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBconnect"].ConnectionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from [dbo].[user] where username='" + user + "' and password= '" + pass + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from [dbo].[user] where username='" + user + "' and password= '" + pass + "' and actdate <='"+today+"' ", con);
             cmd.CommandType = CommandType.Text;
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = cmd;

@@ -76,6 +76,9 @@
     <Compile Include="registerVehicle.xaml.cs">
       <DependentUpon>registerVehicle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="sellVehicle.xaml.cs">
+      <DependentUpon>sellVehicle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="viewVehicleInfo.xaml.cs">
       <DependentUpon>viewVehicleInfo.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="sellVehicle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

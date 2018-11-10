@@ -30,7 +30,7 @@ namespace ACHSGate
             InitializeComponent();
             insuranceLbl.Content = "Insurance \r\nValid Till :";
             revenuelbl.Content = "Revenue License \r\nValid Till :";
-            dpDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dpDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
             cmbType.SelectedIndex = 0;
 
         }

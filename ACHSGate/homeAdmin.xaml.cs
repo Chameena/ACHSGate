@@ -44,7 +44,8 @@ namespace ACHSGate
 
         private void sellVehicle_Click(object sender, RoutedEventArgs e)
         {
-
+            sellVehicle sell = new sellVehicle(null);
+            sell.ShowDialog();
         }
 
         private void viewCost_Click(object sender, RoutedEventArgs e)
@@ -69,6 +70,11 @@ namespace ACHSGate
         {
             viewVehicleInfo vehicle = new viewVehicleInfo();
             vehicle.ShowDialog();
+        }
+
+        private void sellVehicle_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

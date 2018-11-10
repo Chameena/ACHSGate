@@ -16,6 +16,7 @@
 		<Button x:Name="signOff" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Sign Off" HorizontalAlignment="Left" Height="66" Margin="790,584,0,0" VerticalAlignment="Top" Width="204" Click="sign_off_Click"/>
 		<Button x:Name="costAdd" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Add Cost" HorizontalAlignment="Left" Height="66" Margin="790,294,0,0" VerticalAlignment="Top" Width="204" Click="costAdd_Click"/>
 		<Button x:Name="viewVehicleInfo" Style="{StaticResource ButtonStyle}" FontSize="20" Content="View Vehicle Details" HorizontalAlignment="Left" Height="66" Margin="23,400,0,0" VerticalAlignment="Top" Width="204" Click="viewVehicleInfo_Click"/>
+		<Button x:Name="sellVehicle" Style="{StaticResource ButtonStyle}" FontSize="20" Content="Sell Vehicle" HorizontalAlignment="Left" Height="66" Margin="275,400,0,0" VerticalAlignment="Top" Width="204" Click="sellVehicle_Click"/>
 
 	</Grid>
 </Window>

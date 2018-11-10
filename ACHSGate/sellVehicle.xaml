@@ -13,21 +13,29 @@
         <TextBlock x:Name="txtcalc" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Selling Vehicle Details" VerticalAlignment="Top" Height="58" Width="1016" TextAlignment="Center"  Background="#FF0A3E68" Foreground="#fff" FontWeight="Bold" FontSize="35"/>
         <GroupBox FontSize="20" FontWeight="Bold" Header="Enter Vehicle Details" HorizontalAlignment="Left" Height="216" Margin="10,81,0,0" VerticalAlignment="Top" Width="486">
             <Grid>
-                <ComboBox  x:Name="cmbReg" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,27,0,0" VerticalAlignment="Top" Width="276"/>
-                <Label Content="Vehicle Reg. :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="136" Margin="10,27,0,0"/>
+                <ComboBox  x:Name="cmbReg" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,27,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="cmbReg_SelectionChanged"/>
+                <Label Content="Vehicle No. :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="136" Margin="10,27,0,0"/>
             </Grid>
         </GroupBox>
 
         <GroupBox FontSize="20" FontWeight="Bold" Header="Pricing Devision" HorizontalAlignment="Left" Height="216" Margin="522,81,0,0" VerticalAlignment="Top" Width="474">
             <Grid>
-                <ComboBox  x:Name="cmbRate" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,53,0,0" VerticalAlignment="Top" Width="266"/>
-                <Label Content="Profit Rate (%)" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="136" Margin="10,53,0,0"/>
-                <TextBox  x:Name="txtnic" HorizontalAlignment="Left" Height="38" Margin="178,10,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="158"/>
+                <ComboBox  x:Name="cmbRate" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="178,53,0,0" VerticalAlignment="Top" Width="266">
+					<ComboBoxItem>5</ComboBoxItem>
+					<ComboBoxItem>10</ComboBoxItem>
+					<ComboBoxItem>12</ComboBoxItem>
+					<ComboBoxItem>15</ComboBoxItem>
+					<ComboBoxItem>18</ComboBoxItem>
+					<ComboBoxItem>20</ComboBoxItem>
+
+				</ComboBox>
+				<Label Content="Profit Rate (%)" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="136" Margin="10,53,0,0"/>
+                <TextBox IsReadOnly="True" x:Name="txttotal" HorizontalAlignment="Left" Height="38" Margin="178,10,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="158"/>
                 <Label Content="Total Cost" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="136" Margin="10,10,0,0"/>
-                <TextBox  x:Name="txtsellingprice1" HorizontalAlignment="Left" Height="38" Margin="178,135,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="266"/>
+                <TextBox IsReadOnly="True" x:Name="txtsellingprice1" HorizontalAlignment="Left" Height="38" Margin="178,135,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="266"/>
                 <Label Content="Selling Price" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="136" Margin="10,134,0,0"/>
-                <Button x:Name="cal" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Calculate" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="266" Margin="178,96,0,0" />
-                <Button x:Name="viewcost" FontSize="20" Style="{StaticResource ButtonStyle}" Content="View" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="88" Margin="356,10,0,0" />
+                <Button x:Name="cal" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Calculate" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="266" Margin="178,96,0,0" Click="cal_Click"/>
+                <Button x:Name="viewcost" FontSize="20" Style="{StaticResource ButtonStyle}" Content="View" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="88" Margin="356,10,0,0" Click="viewcost_Click"/>
 
             </Grid>
         </GroupBox>
@@ -43,13 +51,14 @@
                 <Label Content="Selling Price :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="116" Margin="545,27,0,0"/>
                 <TextBox  x:Name="txtsellingprice2" HorizontalAlignment="Left" Height="38" Margin="666,27,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="297"/>
                 <Label Content="Selling Date :" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="116" Margin="545,82,0,0"/>
-                <Label Content="Re marks:" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="116" Margin="545,135,0,0"/>
+                <Label Content="Addres:" FontWeight="Bold" FontSize="15" Height="38"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="116" Margin="545,135,0,0"/>
                 <DatePicker  x:Name="sellingDate" HorizontalAlignment="Left" Height="38" Margin="666,82,0,0" FontSize="15" VerticalAlignment="Top" Width="297"/>
-                <TextBox  x:Name="txtremarks" HorizontalAlignment="Left" Height="38" Margin="666,135,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="297"/>
+                <TextBox  x:Name="txtnewaddress" HorizontalAlignment="Left" Height="38" Margin="666,135,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="297"/>
             </Grid>
         </GroupBox>
 
-        <Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="852,607,0,0" VerticalAlignment="Top" Width="144" />
+        <Button x:Name="Add" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Add" HorizontalAlignment="Left" Height="49" Margin="852,607,0,0" VerticalAlignment="Top" Width="144" Click="Add_Click"/>
+		<Button x:Name="cancel" FontSize="20" Style="{StaticResource ButtonStyle}" Content="Cancel" HorizontalAlignment="Left" Height="49" Margin="681,607,0,0" VerticalAlignment="Top" Width="144" Click="cancel_Click" />
 
-    </Grid>
+	</Grid>
 </Window>
